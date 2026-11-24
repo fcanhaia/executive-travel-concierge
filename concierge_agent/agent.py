@@ -112,7 +112,7 @@ def create_concierge_app(settings: RuntimeSettings | None = None) -> App:
     cfg = settings or load_runtime_settings()
     coordinator = build_multi_agent_hierarchy(cfg)
     return App(
-        name="executive_travel_concierge",
+        name="concierge_agent",
         root_agent=coordinator,
         plugins=[
             TravelGovernancePlugin(),
