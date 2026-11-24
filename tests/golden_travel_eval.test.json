@@ -1,0 +1,30 @@
+{
+  "eval_set_id": "executive_travel_concierge_golden_eval",
+  "name": "Executive Travel Concierge Golden Trajectory Suite",
+  "description": "Regression dataset validating multi-city research, budget caps, and HITL booking.",
+  "eval_cases": [
+    {
+      "eval_id": "london_zurich_multicity_under_budget",
+      "session_input": {
+        "app_name": "executive_travel_concierge",
+        "user_id": "exec_traveler_01",
+        "state": {"budget_ceiling_usd": 4200.0}
+      },
+      "conversation": [
+        {
+          "invocation_id": "inv-001",
+          "user_content": {"role": "user", "parts": [{"text": "Plan a 4-day trip from GRU to London and Zurich under $4,200 USD."}]},
+          "final_response": {"role": "model", "parts": [{"text": "Synthesized GRU-LHR-ZRH-GRU itinerary under $4,200 USD awaiting APPROVED- confirmation."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "search_verified_flight_options", "args": {"origin_iata": "GRU", "destination_iata": "LHR", "departure_date": "2026-12-05", "cabin_class": "economy", "max_price_usd": 1500.0}},
+              {"name": "search_curated_hotel_stays", "args": {"city_name": "London", "check_in_date": "2026-12-05", "nights": 2, "max_nightly_rate_usd": 350.0}},
+              {"name": "evaluate_destination_weather_and_fx", "args": {"city_name": "Zurich", "planned_spend_usd": 600.0}}
+            ],
+            "tool_responses": []
+          }
+        }
+      ]
+    }
+  ]
+}
