@@ -1,2 +1,3 @@
 # executive-travel-concierge
-Governed multi-agent executive travel concierge built with Google AD
+
+Governed multi-agent executive travel concierge built with Google ADK.
